@@ -2,8 +2,15 @@
 
 [Pro React Book Tutorial](http://www.pro-react.com/materials/appendixA/)
 
-Simplest possible usage
+##### Simplest possible usage
 
 ```shell
 node_modules/.bin/webpack app/main.js public/bundle.js
+```
+
+##### As npm task runner
+All scripts in [package.json]() already have `node_modules/.bin` in the path
+
+```shell
+npm start
 ```
