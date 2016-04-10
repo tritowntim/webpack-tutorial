@@ -35,8 +35,7 @@ module.exports = {
     new webpack.BannerPlugin("Courtesy Tritown Industries"),
     new HtmlWebpackPlugin({ template: __dirname + "/app/index.tmpl.html"}),
     new webpack.HotModuleReplacementPlugin(),
-    new ExtractTextPlugin("style.css"),
-    new webpack.optimize.UglifyJsPlugin()
+    new ExtractTextPlugin("style.css")
   ],
 
   devServer:  {
