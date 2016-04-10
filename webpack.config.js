@@ -1,5 +1,6 @@
 var webpack = require("webpack");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   devtool:    "source-map",
@@ -23,7 +24,7 @@ module.exports = {
       },
       {
         test:     /\.css$/,
-        loader:   "style!css?modules!postcss"
+        loader:   ExtractTextPlugin.extract("style", "css?modules!postcss")
       }
     ]
   },
@@ -33,7 +34,8 @@ module.exports = {
   plugins: [
     new webpack.BannerPlugin("Courtesy Tritown Industries"),
     new HtmlWebpackPlugin({ template: __dirname + "/app/index.tmpl.html"}),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new ExtractTextPlugin("style.css")
   ],
 
   devServer:  {
