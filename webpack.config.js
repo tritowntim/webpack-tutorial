@@ -1,3 +1,5 @@
+var webpack = require("webpack");
+
 module.exports = {
   devtool:    "source-map",
 
@@ -26,6 +28,10 @@ module.exports = {
   },
 
   postcss: [require("autoprefixer")],
+
+  plugins: [
+    new webpack.BannerPlugin("Courtesy Tritown Industries")
+  ],
 
   devServer:  {
     contentBase:        "./public",
